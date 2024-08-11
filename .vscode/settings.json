@@ -2,5 +2,14 @@
   "code-runner.executorMap": {
     "javascript": "node",
     "typescript": "npx ts-node",    
+  },
+
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+          "quickfix.biome": "explicit",
+          "source.organizeImports.biome": "explicit"
+    },
   }
 }

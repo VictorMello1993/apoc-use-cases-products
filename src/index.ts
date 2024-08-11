@@ -1,5 +1,9 @@
-function sum(a: number, b: number){
-  return a + b;
+function sum(a: number, b: number) {
+	return a + b;
 }
 
 console.log(sum(3, 4));
+
+const teste = "ola mundo";
+
+console.log(teste);
