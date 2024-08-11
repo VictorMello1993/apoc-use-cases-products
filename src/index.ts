@@ -1,9 +1,3 @@
-function sum(a: number, b: number) {
-	return a + b;
-}
+import { MenuPrincipal } from "./external/ui/menu/MenuPrincipal";
 
-console.log(sum(3, 4));
-
-const teste = "ola mundo";
-
-console.log(teste);
+new MenuPrincipal().renderizar();
