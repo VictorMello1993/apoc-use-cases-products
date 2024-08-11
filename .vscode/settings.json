@@ -11,5 +11,11 @@
           "quickfix.biome": "explicit",
           "source.organizeImports.biome": "explicit"
     },
+  },
+  "material-icon-theme.folders.associations": {
+    "core": "rules",
+    "external": "tools",
+    "ui": "animation",
+    "usuario": "admin"
   }
 }
