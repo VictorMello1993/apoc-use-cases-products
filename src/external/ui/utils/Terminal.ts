@@ -1,4 +1,5 @@
 import { terminal } from "terminal-kit";
+import type { InputFieldOptions } from "terminal-kit/Terminal";
 
 export class Terminal {
 	static titulo(texto: string) {
@@ -16,5 +17,20 @@ export class Terminal {
 	static async esperarEnter(): Promise<void> {
 		terminal.white("\nPressione ENTER para continuar...");
 		await terminal.inputField({ echo: false }).promise;
+	}
+
+	static async campoObrigatorio(label: string, options?: InputFieldOptions): Promise<string> {
+		terminal.gray(`\n${label}:`);
+		const valor = await terminal.inputField(options).promise;
+
+		if (valor?.trim()) {
+			return valor;
+		}
+
+		return await Terminal.campoObrigatorio(label, options);
+	}
+
+	static sucesso(texto: string, novaLinha = true) {
+		terminal.green(`${novaLinha ? "\n" : ""}${texto}`);
 	}
 }
