@@ -1,12 +1,13 @@
+import { RegistrarUsuario } from "../usuario/registrarUsuario";
 import { Terminal } from "../utils/Terminal";
 
 export class MenuPrincipal {
 	async renderizar() {
-		const [_, texto] = await Terminal.menu("Menu Principal", ["Opção 1", "Opção 2", "Sair"]);
+		const [_, texto] = await Terminal.menu("Menu Principal", ["Registrar Usuário", "Opção 2", "Sair"]);
 
 		switch (texto) {
-			case "Opção 1":
-				console.log("Opção 1");
+			case "Registrar Usuário":
+				await RegistrarUsuario();
 				break;
 			case "Opção 2":
 				console.log("Opção 2");
@@ -15,6 +16,7 @@ export class MenuPrincipal {
 				process.exit(0);
 		}
 
+		//Chamada recursiva para manter o menu principal aberto enquanto que o usuário não sai
 		await this.renderizar();
 	}
 }

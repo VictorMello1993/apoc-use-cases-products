@@ -12,4 +12,9 @@ export class Terminal {
 		const opcao = await terminal.singleColumnMenu(opcoes).promise;
 		return [opcao.selectedIndex, opcao.selectedText];
 	}
+
+	static async esperarEnter(): Promise<void> {
+		terminal.white("\nPressione ENTER para continuar...");
+		await terminal.inputField({ echo: false }).promise;
+	}
 }
