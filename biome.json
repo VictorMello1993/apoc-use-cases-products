@@ -9,6 +9,9 @@
     "rules": {
       "complexity": {
         "noStaticOnlyClass":"off"
+      },
+      "suspicious": {
+        "noExplicitAny": "off"
       }
     }
   },
