@@ -1,4 +1,4 @@
-import { RegistrarUsuario } from "../usuario/registrarUsuario";
+import { RegistrarUsuarioUseCase } from "../usuario/RegistrarUsuarioUseCase";
 import { Terminal } from "../utils/Terminal";
 
 export class MenuPrincipal {
@@ -7,7 +7,7 @@ export class MenuPrincipal {
 
 		switch (texto) {
 			case "Registrar Usuário":
-				await RegistrarUsuario();
+				await RegistrarUsuarioUseCase();
 				break;
 			case "Opção 2":
 				console.log("Opção 2");

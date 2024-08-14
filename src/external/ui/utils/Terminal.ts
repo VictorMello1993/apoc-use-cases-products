@@ -33,4 +33,8 @@ export class Terminal {
 	static sucesso(texto: string, novaLinha = true) {
 		terminal.green(`${novaLinha ? "\n" : ""}${texto}`);
 	}
+
+	static erro(texto: string, novaLinha = true) {
+		terminal.red(`${novaLinha ? "\n" : ""}${texto}`);
+	}
 }

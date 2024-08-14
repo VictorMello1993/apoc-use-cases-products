@@ -4,14 +4,17 @@
     "enabled": true,
 		"lineWidth": 120
   },
-  "linter": {
-    "enabled": true,
+  "linter": {    
+    "enabled": true,    
     "rules": {
       "complexity": {
-        "noStaticOnlyClass":"off"
+        "noStaticOnlyClass":"off"        
       },
       "suspicious": {
-        "noExplicitAny": "off"
+        "noExplicitAny": "off"        
+      },
+      "style": {
+        "noNonNullAssertion": "off"     
       }
     }
   },
