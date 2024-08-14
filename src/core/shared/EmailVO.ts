@@ -1,6 +1,5 @@
 export class EmailVO {
-	private EMAIL_VALIDO_REGEX =
-		/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+	private EMAIL_VALIDO_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
 	constructor(
 		readonly valor: string,
