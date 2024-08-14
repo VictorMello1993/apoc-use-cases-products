@@ -20,13 +20,10 @@ export async function RegistrarUsuarioUseCase() {
 	try {
 		const usuario = new Usuario({ nome, email, senha });
 		Terminal.sucesso(`O usuário ${usuario.nome.ultimoNome} registrado com sucesso!`);
+		Terminal.sucesso(`O e-mail tem domínio ${usuario.email.nomeDominio}`);
 	} catch (e: any) {
 		Terminal.erro(e.message);
 	} finally {
 		await Terminal.esperarEnter();
 	}
-
-	// Terminal.sucesso(`Usuário ${nome} registrado com sucesso!`);
-	// Terminal.sucesso(`Email: ${email}`);
-	// Terminal.sucesso(`Senha: ${senha}`);
 }
