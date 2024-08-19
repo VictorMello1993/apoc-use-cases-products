@@ -1,15 +1,15 @@
 export class EmailVO {
-	private EMAIL_VALIDO_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-
 	constructor(
 		readonly valor: string,
 		atributo = "e-mail",
 	) {
+		const EMAIL_VALIDO_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+
 		if (!valor) {
 			throw Error(`O campo ${atributo} é obrigatório`);
 		}
 
-		if (!valor.match(this.EMAIL_VALIDO_REGEX)) {
+		if (!valor.match(EMAIL_VALIDO_REGEX)) {
 			throw Error(`${atributo} informado está inválido`);
 		}
 	}
