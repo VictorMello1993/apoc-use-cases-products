@@ -1,6 +1,8 @@
 import type { IUseCase } from "../../shared/IUseCase";
 import { SenhaForteVO } from "../../shared/SenhaForteVO";
 import { Usuario } from "../model/Usuario";
+import type { ICryptoProvider } from "../provider/ICryptoProvider";
+import type { IUsuarioRepository } from "../provider/IUsuarioRepository";
 
 type Input = {
 	nome: string;
@@ -9,15 +11,19 @@ type Input = {
 };
 
 export class RegistrarUsuarioUseCase implements IUseCase<Input, void> {
+	constructor(
+		private cryptoProvider: ICryptoProvider,
+		private repository: IUsuarioRepository,
+	) {}
 	async execute(input: Input): Promise<void> {
 		const senha = new SenhaForteVO(input.senha);
 
 		const usuario = new Usuario({
 			nome: input.nome,
 			email: input.email,
-			senha: senha.valor,
+			senha: this.cryptoProvider.crypto(senha.valor),
 		});
 
-		console.log("fim");
+		await this.repository.salvar(usuario);
 	}
 }
