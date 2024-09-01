@@ -5,10 +5,10 @@ export class UsuarioRepositoryMemory implements IUsuarioRepository {
 	static readonly instance = new UsuarioRepositoryMemory();
 	private constructor(private usuarios: Usuario[] = []) {}
 
-	async buscarPorEmail(email: string): Promise<Usuario | null> {
+	async obterPorEmail(email: string): Promise<Usuario | null> {
 		return this.usuarios.find((u) => u.email.valor === email) ?? null;
 	}
-	async buscarTodos(): Promise<Usuario[]> {
+	async obterTodos(): Promise<Usuario[]> {
 		return this.usuarios;
 	}
 	async salvar(usuario: Usuario): Promise<void> {

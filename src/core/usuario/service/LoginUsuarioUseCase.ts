@@ -19,16 +19,13 @@ export class LoginUsuarioUseCase implements IUseCase<Input, Usuario> {
 	async execute(input: Input): Promise<Usuario> {
 		const email = new EmailVO(input.email);
 
-		const usuario = await this.repository.buscarPorEmail(email.valor);
+		const usuario = await this.repository.obterPorEmail(email.valor);
 
 		if (!usuario) {
 			throw new Error("Usuário não encontrado");
 		}
 
-		const senhaCorreta = this.cryptoProvider.compare(
-			input.senha,
-			usuario.senha!.hash,
-		);
+		const senhaCorreta = this.cryptoProvider.compare(input.senha, usuario.senha!.hash);
 
 		if (!senhaCorreta) {
 			throw new Error("E-mail ou senha inválido(s)");

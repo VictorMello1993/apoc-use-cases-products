@@ -8,7 +8,10 @@ export class Terminal {
 		terminal.bold.magenta("-".repeat(texto.length));
 	}
 
-	static async menu(titulo: string, opcoes: string[]): Promise<[number, string]> {
+	static async menu(
+		titulo: string,
+		opcoes: string[],
+	): Promise<[number, string]> {
 		Terminal.titulo(titulo);
 		const opcao = await terminal.singleColumnMenu(opcoes).promise;
 		return [opcao.selectedIndex, opcao.selectedText];
@@ -19,7 +22,10 @@ export class Terminal {
 		await terminal.inputField({ echo: false }).promise;
 	}
 
-	static async campoObrigatorio(label: string, options?: InputFieldOptions): Promise<string> {
+	static async campoObrigatorio(
+		label: string,
+		options?: InputFieldOptions,
+	): Promise<string> {
 		terminal.gray(`\n${label}:`);
 		const valor = await terminal.inputField(options).promise;
 
@@ -36,5 +42,13 @@ export class Terminal {
 
 	static erro(texto: string, novaLinha = true) {
 		terminal.red(`${novaLinha ? "\n" : ""}${texto}`);
+	}
+
+	static async tabela(dados: any[]) {
+		terminal("\n");
+		terminal.table([
+			Object.keys(dados[0]),
+			...dados.map((dado) => Object.values(dado) as any),
+		]);
 	}
 }

@@ -1,3 +1,4 @@
+import { ListarUsuarios } from "../usuario/ListarUsuarios";
 import { LoginUsuario } from "../usuario/LoginUsuario";
 import { RegistrarUsuario } from "../usuario/RegistrarUsuario";
 import { Terminal } from "../utils/Terminal";
@@ -22,6 +23,9 @@ export class MenuPrincipal {
 				break;
 			case "Logout":
 				UsuarioSessao.finalizar();
+				break;
+			case "Listar Usuários":
+				await ListarUsuarios();
 				break;
 			case "Opção 2":
 				console.log("Opção 2");
