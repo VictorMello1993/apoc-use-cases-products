@@ -25,7 +25,10 @@ export class LoginUsuarioUseCase implements IUseCase<Input, Usuario> {
 			throw new Error("Usuário não encontrado");
 		}
 
-		const senhaCorreta = this.cryptoProvider.compare(input.senha, usuario.senha!.hash);
+		const senhaCorreta = this.cryptoProvider.compare(
+			input.senha,
+			usuario.senha!.hash,
+		);
 
 		if (!senhaCorreta) {
 			throw new Error("E-mail ou senha inválido(s)");
