@@ -1,5 +1,5 @@
 import { terminal } from "terminal-kit";
-import type { InputFieldOptions } from "terminal-kit/Terminal";
+import { InputFieldOptions } from "terminal-kit/Terminal";
 
 export class Terminal {
 	static titulo(texto: string) {

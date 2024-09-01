@@ -1,9 +1,9 @@
 import { UsuarioSessao } from "../../../external/ui/utils/UsuarioSessao";
 import { EmailVO } from "../../shared/EmailVO";
-import type { IUseCase } from "../../shared/IUseCase";
-import type { Usuario } from "../model/Usuario";
-import type { ICryptoProvider } from "../provider/ICryptoProvider";
-import type { IUsuarioRepository } from "../provider/IUsuarioRepository";
+import { IUseCase } from "../../shared/IUseCase";
+import { Usuario } from "../model/Usuario";
+import { ICryptoProvider } from "../provider/ICryptoProvider";
+import { IUsuarioRepository } from "../provider/IUsuarioRepository";
 
 type Input = {
 	email: string;

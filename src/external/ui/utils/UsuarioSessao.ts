@@ -1,4 +1,4 @@
-import type { Usuario } from "../../../core/usuario/model/Usuario";
+import { Usuario } from "../../../core/usuario/model/Usuario";
 
 export class UsuarioSessao {
 	private static _usuario: Usuario | null = null;

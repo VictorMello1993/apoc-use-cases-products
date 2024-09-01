@@ -1,5 +1,5 @@
-import type { Usuario } from "../../core/usuario/model/Usuario";
-import type { IUsuarioRepository } from "../../core/usuario/provider/IUsuarioRepository";
+import { Usuario } from "../../core/usuario/model/Usuario";
+import { IUsuarioRepository } from "../../core/usuario/provider/IUsuarioRepository";
 
 export class UsuarioRepositoryMemory implements IUsuarioRepository {
 	static readonly instance = new UsuarioRepositoryMemory();

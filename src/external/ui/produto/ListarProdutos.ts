@@ -16,7 +16,7 @@ export async function ListarProdutos() {
 			produtos.map((p) => ({
 				id: p.id.valor,
 				nome: p.nome.completo,
-				preco: p.preco.valor,
+				preco: p.preco.formatado(),
 			})),
 		);
 	} catch (e: any) {

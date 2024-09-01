@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import type { ICryptoProvider } from "../../core/usuario/provider/ICryptoProvider";
+import { ICryptoProvider } from "../../core/usuario/provider/ICryptoProvider";
 
 export class Crypto implements ICryptoProvider {
 	crypto(senha: string): string {

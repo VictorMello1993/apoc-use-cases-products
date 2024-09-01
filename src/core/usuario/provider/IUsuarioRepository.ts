@@ -1,4 +1,4 @@
-import type { Usuario } from "../model/Usuario";
+import { Usuario } from "../model/Usuario";
 
 export interface IUsuarioRepository {
 	obterPorEmail(email: string): Promise<Usuario | null>;

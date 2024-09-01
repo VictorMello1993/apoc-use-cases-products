@@ -1,8 +1,8 @@
-import type { IUseCase } from "../../shared/IUseCase";
+import { IUseCase } from "../../shared/IUseCase";
 import { SenhaForteVO } from "../../shared/SenhaForteVO";
 import { Usuario } from "../model/Usuario";
-import type { ICryptoProvider } from "../provider/ICryptoProvider";
-import type { IUsuarioRepository } from "../provider/IUsuarioRepository";
+import { ICryptoProvider } from "../provider/ICryptoProvider";
+import { IUsuarioRepository } from "../provider/IUsuarioRepository";
 
 type Input = {
 	nome: string;

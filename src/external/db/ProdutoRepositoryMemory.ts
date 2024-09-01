@@ -1,5 +1,5 @@
-import type { Produto } from "../../core/produto/model/Produto";
-import type { IProdutoRepository } from "../../core/produto/provider/IProdutoRepository";
+import { Produto } from "../../core/produto/model/Produto";
+import { IProdutoRepository } from "../../core/produto/provider/IProdutoRepository";
 
 export class ProdutoRepositoryMemory implements IProdutoRepository {
 	static readonly instance = new ProdutoRepositoryMemory();

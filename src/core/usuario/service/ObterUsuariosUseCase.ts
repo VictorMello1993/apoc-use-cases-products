@@ -1,6 +1,6 @@
-import type { IUseCase } from "../../shared/IUseCase";
-import type { Usuario } from "../model/Usuario";
-import type { IUsuarioRepository } from "../provider/IUsuarioRepository";
+import { IUseCase } from "../../shared/IUseCase";
+import { Usuario } from "../model/Usuario";
+import { IUsuarioRepository } from "../provider/IUsuarioRepository";
 
 export class ObterUsuariosUseCase implements IUseCase<void, Usuario[]> {
 	constructor(private repository: IUsuarioRepository) {}

@@ -1,6 +1,6 @@
-import type { IUseCase } from "../../shared/IUseCase";
-import type { Produto } from "../model/Produto";
-import type { IProdutoRepository } from "../provider/IProdutoRepository";
+import { IUseCase } from "../../shared/IUseCase";
+import { Produto } from "../model/Produto";
+import { IProdutoRepository } from "../provider/IProdutoRepository";
 
 export class CadastrarProdutoUseCase implements IUseCase<Produto, void> {
 	constructor(private repository: IProdutoRepository) {}
