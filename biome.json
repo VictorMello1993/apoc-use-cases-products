@@ -2,13 +2,14 @@
   "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
   "formatter": {
     "enabled": true,
-		"lineWidth": 120
+		"lineWidth": 80
   },
   "linter": {    
     "enabled": true,    
     "rules": {
       "complexity": {
-        "noStaticOnlyClass":"off"        
+        "noStaticOnlyClass":"off",
+        "noThisInStatic": "off"        
       },
       "suspicious": {
         "noExplicitAny": "off"        

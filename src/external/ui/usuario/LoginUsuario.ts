@@ -1,14 +1,10 @@
-import { RegistrarUsuarioUseCase } from "../../../core/usuario/service/RegistrarUsuarioUseCase";
+import { LoginUsuarioUseCase } from "../../../core/usuario/service/LoginUsuarioUseCase";
 import { Crypto } from "../../auth/Crypto";
 import { UsuarioRepositoryMemory } from "../../db/UsuarioRepositoryMemory";
 import { Terminal } from "../utils/Terminal";
 
-export async function RegistrarUsuario() {
-	Terminal.titulo("Registrar Usuário");
-
-	const nome = await Terminal.campoObrigatorio("Nome", {
-		default: "Fulano de Tal",
-	});
+export async function LoginUsuario() {
+	Terminal.titulo("Login Usuário");
 
 	const email = await Terminal.campoObrigatorio("E-mail", {
 		default: "fulano@teste.com",
@@ -24,11 +20,10 @@ export async function RegistrarUsuario() {
 		const repository = UsuarioRepositoryMemory.instance;
 
 		const crypto = new Crypto();
-		const useCase = new RegistrarUsuarioUseCase(crypto, repository);
+		const useCase = new LoginUsuarioUseCase(crypto, repository);
+		const usuario = await useCase.execute({ email, senha });
 
-		await useCase.execute({ nome, email, senha });
-
-		Terminal.sucesso("Usuário registrado com sucesso");
+		Terminal.sucesso(`Bem-vindo, ${usuario.nome.primeiroNome}!`);
 	} catch (e: any) {
 		Terminal.erro(e.message);
 	} finally {

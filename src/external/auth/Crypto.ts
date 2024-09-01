@@ -6,7 +6,7 @@ export class Crypto implements ICryptoProvider {
 		const salt = bcrypt.genSaltSync(10);
 		return bcrypt.hashSync(senha, salt);
 	}
-	compare(hash: string, senha: string): boolean {
-		throw new Error("Method not implemented.");
+	compare(senha: string, hash: string): boolean {
+		return bcrypt.compareSync(senha, hash);
 	}
 }

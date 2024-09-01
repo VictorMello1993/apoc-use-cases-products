@@ -20,4 +20,8 @@ export class Usuario extends Entidade<Usuario, UsuarioProps> {
 		this.email = new EmailVO(props.email!);
 		this.senha = props.senha ? new SenhaHashVO(props.senha) : null;
 	}
+
+	semSenha(): Usuario {
+		return this.clone({ senha: undefined });
+	}
 }
