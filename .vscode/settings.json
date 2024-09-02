@@ -16,6 +16,7 @@
     "core": "rules",
     "external": "tools",
     "ui": "animation",
-    "usuario": "admin"
+    "usuario": "admin",
+    "adapters": "pipe"
   }
 }
