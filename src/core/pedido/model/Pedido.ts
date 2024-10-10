@@ -38,7 +38,7 @@ export class Pedido extends Entidade<Pedido, PedidoProps> {
 		}
 
 		const itemJaAdicionado = this.itens.find((itemPedido) =>
-			itemPedido.igual(item),
+			itemPedido.produto.igual(item.produto),
 		);
 
 		if (!itemJaAdicionado) {
@@ -50,7 +50,7 @@ export class Pedido extends Entidade<Pedido, PedidoProps> {
 		return this.clone({
 			itens: this.itens
 				.map((itemPedido) => {
-					return itemPedido.igual(item)
+					return itemPedido.produto.igual(item.produto)
 						? itemPedido.adicionarQuantidade(item.quantidade)
 						: itemPedido;
 				})
@@ -64,12 +64,18 @@ export class Pedido extends Entidade<Pedido, PedidoProps> {
 		}
 
 		const itemJaAdicionado = this.itens.find((itemPedido) =>
-			itemPedido.igual(item),
+			itemPedido.produto.igual(item.produto),
 		);
 
 		if (!itemJaAdicionado) {
+			return this;
+		}
+
+		if (itemJaAdicionado.quantidade.valor - item.quantidade.valor <= 0) {
 			return this.clone({
-				itens: [...this.itens, item].map((item) => item.props),
+				itens: this.itens
+					.filter((itemPedido) => itemPedido.diferente(item))
+					.map((item) => item.props),
 			});
 		}
 
