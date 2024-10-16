@@ -51,4 +51,10 @@ export class Terminal {
 			...dados.map((dado) => Object.values(dado) as any),
 		]);
 	}
+
+	static async confirmacao(texto: string): Promise<boolean> {
+		terminal.gray(`\n${texto}: `);
+		const resposta = await terminal.singleLineMenu(["Sim", "Não"]).promise;
+		return resposta.selectedIndex === 0;
+	}
 }

@@ -3,17 +3,20 @@ import { ListarProdutos } from "../produto/ListarProdutos";
 import { ListarUsuarios } from "../usuario/ListarUsuarios";
 import { LoginUsuario } from "../usuario/LoginUsuario";
 import { RegistrarUsuario } from "../usuario/RegistrarUsuario";
+import { Carrinho } from "../utils/Carrinho";
 import { Terminal } from "../utils/Terminal";
 import { UsuarioSessao } from "../utils/UsuarioSessao";
 
 export class MenuPrincipal {
 	async renderizar() {
 		const usuario = UsuarioSessao.usuario;
+		const totalCarrinho = Carrinho.pedido?.valorTotal ?? "R$ 0,00";
+
 		const [_, texto] = await Terminal.menu(
-			`Menu Principal ${usuario ? ` - ${usuario.email.valor}` : ""}`,
+			`Menu Principal ${usuario ? ` - ${usuario.email.valor} - ${totalCarrinho}` : ""}`,
 			usuario
 				? ["Listar Usuários", "Cadastrar Produto", "Listar Produtos", "Logout"]
-				: ["Registrar Usuário", "Login Usuário", "Opção 2", "Sair"],
+				: ["Registrar Usuário", "Login Usuário", "Sair"],
 		);
 
 		switch (texto) {
@@ -34,9 +37,6 @@ export class MenuPrincipal {
 				break;
 			case "Listar Produtos":
 				await ListarProdutos();
-				break;
-			case "Opção 2":
-				console.log("Opção 2");
 				break;
 			case "Sair":
 				process.exit(0);

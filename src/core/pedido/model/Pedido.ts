@@ -17,6 +17,7 @@ export class Pedido extends Entidade<Pedido, PedidoProps> {
 	readonly itens: ItemPedido[];
 
 	constructor(props: PedidoProps) {
+		console.log(props);
 		super({ ...props, valorTotal: Pedido.calcularValorTotal(props) });
 		this.cliente = new Usuario(props.cliente!);
 		this.data = props.data!;
