@@ -38,7 +38,7 @@ export class AdicionarItemPedidoController {
 					valorTotalFormatado: pedido.valorTotal.formatado(),
 					itens: pedido.itens.map((item) => ({
 						...item.props,
-						valorTotalFormatado: item.valor.formatado(),
+						valorFormatado: item.valor.formatado(),
 					})),
 				} as PedidoDTO;
 			},

@@ -1,7 +1,6 @@
 import { ObterProdutosController } from "../../../adapters/controllers/ObterProdutosController";
-import { ObterProdutosUseCase } from "../../../core/produto/service/ObterProdutosUseCase";
 import { ProdutoRepositoryMemory } from "../../db/ProdutoRepositoryMemory";
-import { AdicionarItemNoCarrinho } from "../pedido/adicionarItemNoCarrinho";
+import { AdicionarItemNoCarrinho } from "../pedido/AdicionarItemNoCarrinho";
 import { Terminal } from "../utils/Terminal";
 
 export async function ListarProdutos() {
@@ -31,7 +30,5 @@ export async function ListarProdutos() {
 		}
 	} catch (e: any) {
 		Terminal.erro(e.message);
-	} finally {
-		await Terminal.esperarEnter();
 	}
 }

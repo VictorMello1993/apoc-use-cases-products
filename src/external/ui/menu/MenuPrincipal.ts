@@ -10,7 +10,7 @@ import { UsuarioSessao } from "../utils/UsuarioSessao";
 export class MenuPrincipal {
 	async renderizar() {
 		const usuario = UsuarioSessao.usuario;
-		const totalCarrinho = Carrinho.pedido?.valorTotal ?? "R$ 0,00";
+		const totalCarrinho = Carrinho.pedido?.valorTotalFormatado ?? "R$ 0,00";
 
 		const [_, texto] = await Terminal.menu(
 			`Menu Principal ${usuario ? ` - ${usuario.email.valor} - ${totalCarrinho}` : ""}`,

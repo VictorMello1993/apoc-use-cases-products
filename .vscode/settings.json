@@ -18,5 +18,6 @@
     "ui": "animation",
     "usuario": "admin",
     "adapters": "pipe"
-  }
+  },
+  "editor.defaultFormatter": "biomejs.biome"
 }

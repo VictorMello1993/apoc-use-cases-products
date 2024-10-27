@@ -32,5 +32,7 @@ export async function AdicionarItemNoCarrinho(produto: ProdutoDTO) {
 		Terminal.sucesso("Item adicionado no carrinho!");
 	} catch (error: any) {
 		Terminal.erro(error.message);
+	} finally {
+		await Terminal.esperarEnter();
 	}
 }

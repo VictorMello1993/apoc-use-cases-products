@@ -7,6 +7,7 @@ export class ProdutoToDTO implements IConverter<Produto, ProdutoDTO> {
 	convert(produto: Produto): ProdutoDTO {
 		const produtoDTO: ProdutoDTO = {
 			nome: produto.nome.completo,
+			preco: produto.preco.valor,
 			precoFormatado: produto.preco.formatado(),
 		};
 
