@@ -1,3 +1,4 @@
+import { FinalizarPedido } from "../pedido/FinalizarPedido";
 import { CadastrarProduto } from "../produto/CadastrarProduto";
 import { ListarProdutos } from "../produto/ListarProdutos";
 import { ListarUsuarios } from "../usuario/ListarUsuarios";
@@ -15,7 +16,13 @@ export class MenuPrincipal {
 		const [_, texto] = await Terminal.menu(
 			`Menu Principal ${usuario ? ` - ${usuario.email.valor} - ${totalCarrinho}` : ""}`,
 			usuario
-				? ["Listar Usuários", "Cadastrar Produto", "Listar Produtos", "Logout"]
+				? [
+						"Listar Usuários",
+						"Cadastrar Produto",
+						"Listar Produtos",
+						"Finalizar Pedido",
+						"Logout",
+					]
 				: ["Registrar Usuário", "Login Usuário", "Sair"],
 		);
 
@@ -37,6 +44,9 @@ export class MenuPrincipal {
 				break;
 			case "Listar Produtos":
 				await ListarProdutos();
+				break;
+			case "Finalizar Pedido":
+				await FinalizarPedido();
 				break;
 			case "Sair":
 				process.exit(0);

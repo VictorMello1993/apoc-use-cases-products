@@ -11,7 +11,9 @@ export async function AdicionarItemNoCarrinho(produto: ProdutoDTO) {
 		"Deseja adicionar o item no carrinho?",
 	);
 
-	if (!confirmacao) return;
+	if (!confirmacao) {
+		return;
+	}
 
 	const quantidade = await Terminal.campoObrigatorio("Quantidade", {
 		default: "1",

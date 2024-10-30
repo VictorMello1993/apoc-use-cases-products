@@ -2,12 +2,14 @@ import { Entidade, EntidadeProps } from "../../shared/Entidade";
 import { PrecoVO } from "../../shared/PrecoVO";
 import { Usuario, UsuarioProps } from "../../usuario/model/Usuario";
 import { ItemPedido, ItemPedidoProps } from "./ItemPedido";
+import { PedidoStatus, TipoPedidoStatus } from "./PedidoStatus";
 
 export interface PedidoProps extends EntidadeProps {
 	cliente?: UsuarioProps;
 	data?: Date;
 	valorTotal?: number;
 	itens?: ItemPedidoProps[];
+	status?: TipoPedidoStatus;
 }
 
 export class Pedido extends Entidade<Pedido, PedidoProps> {
@@ -15,6 +17,7 @@ export class Pedido extends Entidade<Pedido, PedidoProps> {
 	readonly data: Date;
 	readonly valorTotal: PrecoVO;
 	readonly itens: ItemPedido[];
+	readonly status: PedidoStatus;
 
 	constructor(props: PedidoProps) {
 		super({ ...props, valorTotal: Pedido.calcularValorTotal(props) });
@@ -22,6 +25,7 @@ export class Pedido extends Entidade<Pedido, PedidoProps> {
 		this.data = props.data!;
 		this.valorTotal = new PrecoVO(this.props.valorTotal!);
 		this.itens = (props.itens ?? []).map((item) => new ItemPedido(item));
+		this.status = new PedidoStatus(props.status!);
 	}
 
 	static novo(cliente: Usuario, ...itens: ItemPedido[]): Pedido {
@@ -29,6 +33,7 @@ export class Pedido extends Entidade<Pedido, PedidoProps> {
 			cliente: cliente.props,
 			data: new Date(),
 			itens: itens.map((item) => item.props),
+			status: PedidoStatus.ABERTO,
 		});
 	}
 
@@ -88,6 +93,18 @@ export class Pedido extends Entidade<Pedido, PedidoProps> {
 				})
 				.map((item) => item.props),
 		});
+	}
+
+	pagar(): Pedido {
+		return this.clone({ status: this.status.pagar().value });
+	}
+
+	cancelar(): Pedido {
+		return this.clone({ status: this.status.cancelar().value });
+	}
+
+	finalizar(): Pedido {
+		return this.clone({ status: this.status.finalizar().value });
 	}
 
 	private static calcularValorTotal(props: PedidoProps): number {

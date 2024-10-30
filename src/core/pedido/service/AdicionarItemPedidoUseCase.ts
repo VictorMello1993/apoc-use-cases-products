@@ -17,11 +17,7 @@ export class AdicionarItemPedidoUseCase implements IUseCase<any, any> {
 	) {}
 
 	async execute(input: any): Promise<any> {
-		// console.log(input);
 		const { pedido, cliente, item } = this.inputConverter.convert(input);
-
-		// console.log(pedido);
-
 		if (!cliente) {
 			throw new Error("Cliente não informado");
 		}
