@@ -7,10 +7,10 @@ Este repositório contém uma aplicação de cadastro de produtos desenvolvida e
 - [Visão geral](#visão-geral)
 - [Estrutura do projeto](#estrutura-do-projeto)
 - [Casos de uso implementados](#casos-de-uso-implementados)
-- [Pré-requisitos](#pré-requisitos)
+- [Tecnologias utilizadas](#tecnologias-utilizadas)
 - [Instalação e utilização](#instalação-e-utilização)
 
-## Visão geral
+## 🌎 Visão geral
 
 O projeto é um simples cadastro de produto para demonstrar a utilização de **casos de uso** na Arquitetura de Software. Cada operação de negócio, como cadastro de produtos, listagem, criação e finalização de um pedido, é representada por um caso de uso isolado, permitindo uma estrutura mais clara e de fácil manutenção. 
 
@@ -36,12 +36,12 @@ A aplicação segue uma arquitetura baseada na Arquitetura Limpa, que neste proj
 
 As funcionalidades são organizadas em módulos independentes, de forma a ilustrar a aplicação dos princípios de Arquitetura Limpa sem dependência de frameworks externos.
 
-## Pré-requisitos
+## 🔧 Tecnologias utilizadas
 
 - [Node.js](https://nodejs.org/) 
 - [TypeScript](https://www.typescriptlang.org/) 
 
-## Instalação e utilização 
+## 🚩 Instalação e utilização 
 
 1. Clone o repositório:
 
