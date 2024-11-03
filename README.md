@@ -4,10 +4,10 @@ Este repositório contém uma aplicação de cadastro de produtos desenvolvida e
 
 ## Índice
 
-- [Visão geral](#visão-geral)
+- [Visão geral](#-visão-geral)
 - [Estrutura do projeto](#estrutura-do-projeto)
 - [Casos de uso implementados](#casos-de-uso-implementados)
-- [Tecnologias utilizadas](#tecnologias-utilizadas)
+- [Tecnologias utilizadas](#-tecnologias-utilizadas)
 - [Instalação e utilização](#instalação-e-utilização)
 
 ## 🌎 Visão geral
