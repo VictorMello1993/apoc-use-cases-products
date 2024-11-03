@@ -8,7 +8,7 @@ Este repositório contém uma aplicação de cadastro de produtos desenvolvida e
 - [Estrutura do projeto](#estrutura-do-projeto)
 - [Casos de uso implementados](#casos-de-uso-implementados)
 - [Tecnologias utilizadas](#-tecnologias-utilizadas)
-- [Instalação e utilização](#instalação-e-utilização)
+- [Instalação e utilização](#-instalação-e-utilização)
 
 ## 🌎 Visão geral
 
