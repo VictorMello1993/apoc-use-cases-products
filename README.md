@@ -4,13 +4,13 @@ Este repositório contém uma aplicação de cadastro de produtos desenvolvida e
 
 ## Índice
 
-- [Visão Geral](#visão-geral)
+- [Visão geral](#visão-geral)
 - [Estrutura do projeto](#estrutura-do-projeto)
 - [Casos de uso implementados](#casos-de-uso-implementados)
 - [Pré-requisitos](#pré-requisitos)
-- [Instalação e utilização](#instalação)
+- [Instalação e utilização](#instalação-e-utilização)
 
-## Visão Geral
+## Visão geral
 
 O projeto é um simples cadastro de produto para demonstrar a utilização de **casos de uso** na Arquitetura de Software. Cada operação de negócio, como cadastro de produtos, listagem, criação e finalização de um pedido, é representada por um caso de uso isolado, permitindo uma estrutura mais clara e de fácil manutenção. 
 
@@ -25,7 +25,7 @@ A aplicação segue uma arquitetura baseada na Arquitetura Limpa, que neste proj
 * **Core** - Camada de domínio da aplicação. Ela engloba as entidades, objetos de valor, interfaces de repository para isolar a lógica de domínio com as dependências externas, e o mais importante, os casos de uso
 * **Interfaces e adaptadores** - Cria uma ponte entre a camada externa e a camada de domínio para chamar os casos de uso, utilizando o conceito de **inversão de dependência** para evitar acoplamento e ter o código mais coeso, e de fácil manutenção 
 
-## Casos de Uso Implementados
+## Casos de uso implementados
 
 - **Cadastro de usuário**: Cria um usuário que irá usar o sistema
 - **Login do usuário**: Foi criada a autenticação do usuário para separar as operações que só devem ser realizadas quando o usuário estiver logado
