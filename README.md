@@ -54,9 +54,9 @@ As funcionalidades são organizadas em módulos independentes, de forma a ilustr
    ```
 
 ## Versões do README
-![us](https://user-images.githubusercontent.com/35710766/220503018-6f583dda-2ffc-4f62-afb2-ce0a982ef781.png) [Inglês](https://github.com/VictorMello1993/nlw-setup/blob/master/README-US.md) 
+![us](https://user-images.githubusercontent.com/35710766/220503018-6f583dda-2ffc-4f62-afb2-ce0a982ef781.png) [Inglês](https://github.com/VictorMello1993/apoc-use-cases-products/blob/master/README-US.md) 
 
-![br](https://user-images.githubusercontent.com/35710766/220492966-9ed5198a-d9a3-40e2-9d23-e977f4abf253.png) [Português](https://github.com/VictorMello1993/nlw-setup/blob/master/README.md)
+![br](https://user-images.githubusercontent.com/35710766/220492966-9ed5198a-d9a3-40e2-9d23-e977f4abf253.png) [Português](https://github.com/VictorMello1993/apoc-use-cases-products/blob/master/README-US.md)
 
 
 
