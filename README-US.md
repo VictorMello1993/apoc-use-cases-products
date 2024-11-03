@@ -1,4 +1,4 @@
-Product Registration - Use Case Project
+# Product Registration - Use Case Project
 
 This repository contains a product registration application developed in Node.js with TypeScript, designed to elucidate use case concepts in Software Architecture. The project does not use any third-party backend framework or specific database, opting instead to store data in memory for educational purposes.
 
