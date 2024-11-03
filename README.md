@@ -5,7 +5,7 @@ Este repositório contém uma aplicação de cadastro de produtos desenvolvida e
 ## Índice
 
 - [Visão Geral](#visão-geral)
-- [Estrutura de Casos de Uso](#estrutura-de-casos-de-uso)
+- [Estrutura do projeto]#estrutura-do-projeto)
 - [Pré-requisitos](#pré-requisitos)
 - [Instalação e utilização](#instalação)
 
