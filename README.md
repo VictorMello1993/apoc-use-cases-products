@@ -1,6 +1,6 @@
 # Cadastro de Produtos - Projeto de Casos de Uso
 
-Este repositório contém uma aplicação de cadastro de produtos desenvolvida em **Node.js** com **TypeScript**, projetada para elucidar os conceitos de **casos de uso** na Arquitetura de Softwaree. O projeto não utiliza nenhum framework backend de terceiros, nem banco de dados específico, optando por armazenar dados em memória para fins didáticos.
+Este repositório contém uma aplicação de cadastro de produtos desenvolvida em **Node.js** com **TypeScript**, projetada para elucidar os conceitos de **casos de uso** na Arquitetura de Software. O projeto não utiliza nenhum framework backend de terceiros, nem banco de dados específico, optando por armazenar dados em memória para fins didáticos.
 
 ## Índice
 
