@@ -47,7 +47,6 @@ As funcionalidades são organizadas em módulos independentes, de forma a ilustr
 
    ```bash
    git clone https://github.com/VictorMello1993/apoc-use-cases-products.git
-   cd apoc-use-cases-products
 
 2. Execute o projeto:
   ```bash
